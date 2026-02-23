@@ -50,7 +50,7 @@
         <div class="available-jobs mb-5">
             <div class="my-5 flex items-center justify-between">
                 <h5 class="text-lg font-semibold text-[#002C5C]">Available Jobs</h5>
-                <p class="text-sm opacity-70"><span  id="all-jobs"></span> jobs</p>
+                <p class="text-sm opacity-70"><span id="all-jobs"></span> jobs</p>
             </div>
             <div class="buttons space-x-3">
                 <button id="all" class="btn btn-sm text-white bg-[#3B82F6] px-8">All</button>
@@ -59,7 +59,7 @@
             </div>
         </div>
 
-        <div class="job-cards space-y-5">
+        <div id="all-job-preview" class="all-jobs space-y-5">
             <!-- card-1 -->
             <div class="job-card bg-white p-5 rounded-md shadow-sm space-y-4">
                 <div class="job-title flex items-center justify-between">
@@ -234,6 +234,56 @@
                 <p class="text-sm font-light opacity-70">We are looking for an experienced Frontend Developer to build
                     scalable web applications using React and TypeScript. You will work with a talented team on
                     cutting-edge projects.</p>
+                <div class="space-x-2">
+                    <button class="btn btn-sm btn-outline btn-accent">interview</button>
+                    <button class="btn  btn-sm btn-outline btn-secondary">Rejected</button>
+                </div>
+            </div>
+        </div>
+        <!-- interview preview  -->
+        <div id="interview-preview" class="all-jobs space-y-5 hidden">
+            <!-- card-1 -->
+            <div class="job-card bg-white p-5 rounded-md shadow-sm space-y-4">
+                <div class="job-title flex items-center justify-between">
+                    <div class="">
+                        <h5 class="text-base font-semibold text-[#002C5C]">interview</h5>
+                        <p class="text-sm opacity-70">React Native Developer</p>
+                    </div>
+                    <button class="opacity-70 cursor-pointer"><i class="fa-solid fa-trash-can"></i></button>
+                </div>
+                <p class="text-sm font-light opacity-70">Remote
+                    •
+                    Full-time
+                    •
+                    $130,000 - $175,000</p>
+                <button class="btn btn-sm btn-soft bg-primary/10">NOT APPLIED</button>
+                <p class="text-sm font-light opacity-70">Build cross-platform mobile applications using React Native.
+                    Work on products used by millions of users worldwide.</p>
+                <div class="space-x-2">
+                    <button class="btn btn-sm btn-outline btn-accent">interview</button>
+                    <button class="btn  btn-sm btn-outline btn-secondary">Rejected</button>
+                </div>
+            </div>
+        </div>
+        <!-- rejected-preview  -->
+        <div id="rejected-preview" class="all-jobs space-y-5 hidden">
+            <!-- card-1 -->
+            <div class="job-card bg-white p-5 rounded-md shadow-sm space-y-4">
+                <div class="job-title flex items-center justify-between">
+                    <div class="">
+                        <h5 class="text-base font-semibold text-[#002C5C]">rejected</h5>
+                        <p class="text-sm opacity-70">React Native Developer</p>
+                    </div>
+                    <button class="opacity-70 cursor-pointer"><i class="fa-solid fa-trash-can"></i></button>
+                </div>
+                <p class="text-sm font-light opacity-70">Remote
+                    •
+                    Full-time
+                    •
+                    $130,000 - $175,000</p>
+                <button class="btn btn-sm btn-soft bg-primary/10">NOT APPLIED</button>
+                <p class="text-sm font-light opacity-70">Build cross-platform mobile applications using React Native.
+                    Work on products used by millions of users worldwide.</p>
                 <div class="space-x-2">
                     <button class="btn btn-sm btn-outline btn-accent">interview</button>
                     <button class="btn  btn-sm btn-outline btn-secondary">Rejected</button>

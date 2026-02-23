@@ -14,4 +14,11 @@ allButton.classList.remove("btn", "btn-sm", "bg-white", "px-8");
   
 rejectedButton.classList.remove("bg-[#3B82F6]", "text-white");
   rejectedButton.classList.add("btn", "btn-sm", "bg-white", "px-8");
+
+// hidden all jobs and rejected
+document.getElementById("all-job-preview").classList.add("hidden");
+
+// show interview preview 
+document.getElementById("interview-preview").classList.remove("hidden")
+document.getElementById("rejected-preview").classList.add("hidden")
 });

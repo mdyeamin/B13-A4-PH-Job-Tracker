@@ -17,4 +17,10 @@ document.getElementById("all").addEventListener("click", function () {
 
   rejectedButton.classList.remove("bg-[#3B82F6]", "text-white");
   rejectedButton.classList.add("btn", "btn-sm", "bg-white", "px-8");
+
+// show all jobs
+document.getElementById("all-job-preview").classList.remove("hidden");
+// hide interview and rejected
+document.getElementById("interview-preview").classList.add("hidden")
+document.getElementById("rejected-preview").classList.add("hidden")
 });
