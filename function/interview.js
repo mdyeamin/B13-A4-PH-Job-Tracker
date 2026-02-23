@@ -1,24 +1,36 @@
 document.getElementById("interview").addEventListener("click", function () {
   const allButton = document.getElementById("all");
-allButton.classList.remove("btn", "btn-sm", "bg-white", "px-8");
-  allButton.classList.add("btn","btn-sm","text-white","bg-[#3B82F6]","px-8")
+  allButton.classList.remove("btn", "btn-sm", "bg-white", "px-8");
+  allButton.classList.add(
+    "btn",
+    "btn-sm",
+    "text-white",
+    "bg-[#3B82F6]",
+    "px-8",
+  );
 
   allButton.classList.remove("bg-[#3B82F6]", "text-white");
   allButton.classList.add("btn", "btn-sm", "bg-white", "px-8");
 
-  const interviewButton = document.getElementById("interview")
-  interviewButton.classList.remove("btn", "btn-sm", "bg-white", "px-8")
-  interviewButton.classList.add("btn","btn-sm","text-white","bg-[#3B82F6]","px-8")
-   
+  const interviewButton = document.getElementById("interview");
+  interviewButton.classList.remove("btn", "btn-sm", "bg-white", "px-8");
+  interviewButton.classList.add(
+    "btn",
+    "btn-sm",
+    "text-white",
+    "bg-[#3B82F6]",
+    "px-8",
+  );
+
   const rejectedButton = document.getElementById("rejected");
-  
-rejectedButton.classList.remove("bg-[#3B82F6]", "text-white");
+
+  rejectedButton.classList.remove("bg-[#3B82F6]", "text-white");
   rejectedButton.classList.add("btn", "btn-sm", "bg-white", "px-8");
 
-// hidden all jobs and rejected
-document.getElementById("all-job-preview").classList.add("hidden");
+  // show interview preview
+  document.getElementById("interview-preview").classList.remove("hidden");
 
-// show interview preview 
-document.getElementById("interview-preview").classList.remove("hidden")
-document.getElementById("rejected-preview").classList.add("hidden")
+  // hidden all jobs and rejected
+  document.getElementById("all-job-preview").classList.add("hidden");
+  document.getElementById("rejected-preview").classList.add("hidden");
 });

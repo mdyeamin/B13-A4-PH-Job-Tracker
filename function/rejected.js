@@ -21,6 +21,6 @@ document.getElementById("rejected").addEventListener("click", function () {
 //   show rejected items 
 document.getElementById("rejected-preview").classList.remove("hidden");
 // hide // hide interview and all jobs
+document.getElementById("all-job-preview").classList.add("hidden")
 document.getElementById("interview-preview").classList.add("hidden")
-document.getElementById("all-jobs-preview").classList.add("hidden")
 });
