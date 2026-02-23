@@ -1,7 +1,8 @@
-// hwo many jon available
-// get the all job by class
+
 const jobs = document.getElementsByClassName("job-card");
-// where i show job length
-const totalJob = document.getElementById("total");
+const totalJob = document.getElementById("total-jobs");
+const allJobs = document.getElementById("all-jobs");
 totalJob.innerText = jobs.length
+allJobs.innerText = jobs.length
+
 

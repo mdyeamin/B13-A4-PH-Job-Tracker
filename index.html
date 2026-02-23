@@ -34,15 +34,15 @@
         <div class="show-all grid grid-cols-1 md:grid-cols-3 gap-5">
             <div class="total h-20 bg-white p-4 rounded-md shadow-sm">
                 <p class="text-xs mb-1">Total</p>
-                <h3 id="total" class="text-xl font-semibold text-[#002C5C]"></h3>
+                <h3 id="total-jobs" class="all-jobs text-xl font-semibold text-[#002C5C]"></h3>
             </div>
             <div class="interview h-20 bg-white p-4 rounded-md shadow-sm">
                 <p class="text-xs mb-1">Interview</p>
-                <h3 id="interview" class="text-xl font-semibold text-[#10B981]">0</h3>
+                <h3 id="total-interview" class="text-xl font-semibold text-[#10B981]">0</h3>
             </div>
             <div class="Rejected h-20 bg-white p-4 rounded-md shadow-sm">
                 <p class="text-xs mb-1">Rejected</p>
-                <h3 id="Rejected" class="text-xl font-semibold text-[#EF4444]">0</h3>
+                <h3 id="total-Rejected" class="text-xl font-semibold text-[#EF4444]">0</h3>
             </div>
         </div>
         <hr class="border-[px] border-gray-300 my-10">
@@ -50,12 +50,12 @@
         <div class="available-jobs mb-5">
             <div class="my-5 flex items-center justify-between">
                 <h5 class="text-lg font-semibold text-[#002C5C]">Available Jobs</h5>
-                <p class="text-sm opacity-70"><span>8</span> jobs</p>
+                <p class="text-sm opacity-70"><span  id="all-jobs"></span> jobs</p>
             </div>
             <div class="buttons space-x-3">
-                <button class="btn btn-sm text-white bg-[#3B82F6] border-0 px-8">All</button>
-                <button class="btn btn-sm bg-white ">Interview</button>
-                <button class="btn btn-sm bg-white px-8">Rejected</button>
+                <button id="all" class="btn btn-sm text-white bg-[#3B82F6] px-8">All</button>
+                <button id="interview" class="btn btn-sm bg-white px-8">Interview</button>
+                <button id="rejected" class="btn btn-sm bg-white px-8">Rejected</button>
             </div>
         </div>
 
@@ -244,6 +244,9 @@
     </section>
 
     <script src="function/global.js"></script>
+    <script src="function/all.js"></script>
+    <script src="function/interview.js"></script>
+    <script src="function/rejected.js"></script>
 </body>
 
 </html>
