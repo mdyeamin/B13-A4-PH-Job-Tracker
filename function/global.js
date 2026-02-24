@@ -22,8 +22,43 @@ function updateRejectedCount() {
 
 function updateJobCount() {
   totalJob.innerText = jobs.length;
-  allJobs.innerText = jobs.length;
+
+  const allPreview = document.getElementById("all-job-preview");
+  const interviewPreview = document.getElementById("interview-preview");
+  const rejectedPreview = document.getElementById("rejected-preview");
+
+  if (!interviewPreview.classList.contains("hidden")) {
+    allJobs.innerText = `${interview.length} of ${jobs.length}`;
+    return;
+  }
+
+  if (!rejectedPreview.classList.contains("hidden")) {
+    allJobs.innerText = `${rejected.length} of ${jobs.length}`;
+    return;
+  }
+
+  if (!allPreview.classList.contains("hidden")) {
+    allJobs.innerText = `${jobs.length}`;
+  }
 }
+
+function updateTopRightJobsText() {
+  const interviewPreview = document.getElementById("interview-preview");
+  const rejectedPreview = document.getElementById("rejected-preview");
+
+  if (!interviewPreview.classList.contains("hidden")) {
+    allJobs.innerText = `${interview.length} of ${jobs.length}`;
+    return;
+  }
+
+  if (!rejectedPreview.classList.contains("hidden")) {
+    allJobs.innerText = `${rejected.length} of ${jobs.length}`;
+    return;
+  }
+
+  allJobs.innerText = `${jobs.length}`;
+}
+
 function updateInterviewEmptyState() {
   const container = document.getElementById("interview-preview");
   const emptyCard = document.getElementById("no-interview");
@@ -47,16 +82,37 @@ function updateEmptyStates() {
   updateRejectedEmptyState();
 }
 
+// delete card
 document.addEventListener("click", function (e) {
   const deleteBtn = e.target.closest(".delete-card");
   if (!deleteBtn) return;
 
   const card = deleteBtn.closest(".job-card, .interview-card, .rejected-card");
-  if (card) card.remove();
+  if (!card) return;
+
+  const jobTitle = card.querySelector("h5")?.innerText || "";
+
+  document.querySelectorAll("#all-job-preview .job-card").forEach((c) => {
+    const t = c.querySelector("h5")?.innerText || "";
+    if (t === jobTitle) c.remove();
+  });
+
+  document
+    .querySelectorAll("#interview-preview .interview-card")
+    .forEach((c) => {
+      const t = c.querySelector("h5")?.innerText || "";
+      if (t === jobTitle) c.remove();
+    });
+
+  document.querySelectorAll("#rejected-preview .rejected-card").forEach((c) => {
+    const t = c.querySelector("h5")?.innerText || "";
+    if (t === jobTitle) c.remove();
+  });
 
   updateJobCount();
-  updateInterviewEmptyState();
-  updateRejectedEmptyState();
+  updateInterviewCount();
+  updateRejectedCount();
+  updateEmptyStates();
 });
 
 updateJobCount();
@@ -64,20 +120,6 @@ updateInterviewCount();
 updateRejectedCount();
 updateInterviewEmptyState();
 updateRejectedEmptyState();
-
-// delete card
-document.addEventListener("click", function (e) {
-  const deleteBtn = e.target.closest(".delete-card");
-  if (!deleteBtn) return;
-
-  const card = deleteBtn.closest(".job-card, .interview-card, .rejected-card");
-  if (card) card.remove();
-
-  updateJobCount();
-  updateInterviewCount();
-  updateRejectedCount();
-    rejectCounter()
-});
 
 // when interview and rejected button clicked
 // when interview button click

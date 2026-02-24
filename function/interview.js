@@ -22,12 +22,12 @@ document.getElementById("interview").addEventListener("click", function () {
     "px-8",
   );
 // this code for show interview length of all jobs 
+
   function interviewCounter() {
    const interviewTrack =   allJobs.innerText = `${interview.length} of ${jobs.length}`;
    return interviewTrack;
   }
   interviewCounter()
-
   
   const rejectedButton = document.getElementById("rejected");
 

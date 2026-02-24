@@ -23,9 +23,11 @@ document.getElementById("rejected").addEventListener("click", function () {
    return rejectedTrack;
   }
   rejectCounter()
+  console.log();
+  
   //   show rejected items
   document.getElementById("rejected-preview").classList.remove("hidden");
-  // hide // hide interview and all jobs
+ // hide interview and all jobs
   document.getElementById("all-job-preview").classList.add("hidden");
   document.getElementById("interview-preview").classList.add("hidden");
 });
