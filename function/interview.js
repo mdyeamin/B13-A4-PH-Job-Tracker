@@ -33,4 +33,5 @@ document.getElementById("interview").addEventListener("click", function () {
   // hidden all jobs and rejected
   document.getElementById("all-job-preview").classList.add("hidden");
   document.getElementById("rejected-preview").classList.add("hidden");
+
 });
