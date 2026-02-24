@@ -17,7 +17,8 @@ document.getElementById("rejected").addEventListener("click", function () {
     "px-8",
   );
 
-
+// this code for show rejected length of all jobs 
+  allJobs.innerText = `${rejected.length} of ${jobs.length}`;
 //   show rejected items 
 document.getElementById("rejected-preview").classList.remove("hidden");
 // hide // hide interview and all jobs

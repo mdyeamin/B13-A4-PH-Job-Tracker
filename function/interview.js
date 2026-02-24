@@ -21,7 +21,9 @@ document.getElementById("interview").addEventListener("click", function () {
     "bg-[#3B82F6]",
     "px-8",
   );
-
+// this code for show interview length of all jobs 
+  allJobs.innerText = `${interview.length} of ${jobs.length}`;
+  
   const rejectedButton = document.getElementById("rejected");
 
   rejectedButton.classList.remove("bg-[#3B82F6]", "text-white");

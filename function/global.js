@@ -33,6 +33,7 @@ function updateInterviewEmptyState() {
   else emptyCard.classList.remove("hidden");
 }
 
+
 function updateRejectedEmptyState() {
   const container = document.getElementById("rejected-preview");
   const emptyCard = container.querySelector(".no-rejected");
@@ -56,12 +57,14 @@ document.addEventListener("click", function (e) {
 
   updateJobCount();
   updateInterviewEmptyState();
+  updateRejectedEmptyState()
 });
 
 updateJobCount();
 updateInterviewCount();
 updateRejectedCount();
 updateInterviewEmptyState();
+updateRejectedEmptyState()
 
 // delete card
 document.addEventListener("click", function (e) {
@@ -87,7 +90,8 @@ document
     if (interviewBtn) {
       const card = interviewBtn.closest(".job-card");
       const statusBtn = card.querySelector(".status-button");
-
+  
+    
       statusBtn.innerText = "INTERVIEW";
       statusBtn.classList.remove("bg-primary/10");
       statusBtn.classList.add("bg-accent", "text-white");
@@ -115,7 +119,7 @@ document
         interviewContainer.appendChild(clonedCard);
       }
 
-      const rejectedContainer = document.getElementById("rejected-preview");
+      const rejectedContainer = document.getElementById("rejected-preview", "");
       rejectedContainer.querySelectorAll(".rejected-card").forEach((c) => {
         const t = c.querySelector("h5")?.innerText || "";
         if (t === jobTitle) c.remove();

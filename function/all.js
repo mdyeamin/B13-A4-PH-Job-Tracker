@@ -11,7 +11,10 @@ document.getElementById("all").addEventListener("click", function () {
     "text-white",
     "bg-[#3B82F6]",
     "px-8",
+
   );
+
+  allJobs.innerText =  `${jobs.length}`;
 
   const rejectedButton = document.getElementById("rejected");
 
