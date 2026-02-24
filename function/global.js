@@ -89,7 +89,6 @@ document
       const statusBtn = card.querySelector(".status-button");
 
       statusBtn.innerText = "INTERVIEW";
-
       statusBtn.classList.remove("bg-primary/10");
       statusBtn.classList.add("bg-accent", "text-white");
 
@@ -116,17 +115,26 @@ document
         interviewContainer.appendChild(clonedCard);
       }
 
+      const rejectedContainer = document.getElementById("rejected-preview");
+      rejectedContainer.querySelectorAll(".rejected-card").forEach((c) => {
+        const t = c.querySelector("h5")?.innerText || "";
+        if (t === jobTitle) c.remove();
+      });
+
       updateInterviewCount();
+      updateRejectedCount();
       updateEmptyStates();
-      updateJobCount()
+      updateJobCount();
     }
 
     if (rejectBtn) {
       const card = rejectBtn.closest(".job-card");
       const statusBtn = card.querySelector(".status-button");
+
       statusBtn.innerText = "REJECTED";
       statusBtn.classList.add("bg-secondary", "text-white");
       statusBtn.classList.remove("bg-accent", "bg-primary/10");
+
       const jobTitle = card.querySelector("h5")?.innerText || "";
       const rejectedContainer = document.getElementById("rejected-preview");
 
@@ -149,7 +157,15 @@ document
 
         rejectedContainer.appendChild(clonedCard);
       }
+
+      const interviewContainer = document.getElementById("interview-preview");
+      interviewContainer.querySelectorAll(".interview-card").forEach((c) => {
+        const t = c.querySelector("h5")?.innerText || "";
+        if (t === jobTitle) c.remove();
+      });
+
       updateRejectedCount();
+      updateInterviewCount();
       updateJobCount();
       updateEmptyStates();
     }
