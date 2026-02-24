@@ -17,11 +17,16 @@ document.getElementById("rejected").addEventListener("click", function () {
     "px-8",
   );
 
-// this code for show rejected length of all jobs 
-  allJobs.innerText = `${rejected.length} of ${jobs.length}`;
-//   show rejected items 
-document.getElementById("rejected-preview").classList.remove("hidden");
-// hide // hide interview and all jobs
-document.getElementById("all-job-preview").classList.add("hidden")
-document.getElementById("interview-preview").classList.add("hidden")
+  // this code for show rejected length of all jobs
+  function rejectCounter() {
+   const rejectedTrack =  allJobs.innerText = `${rejected.length} of ${jobs.length}`
+   return rejectedTrack;
+  }
+  rejectCounter()
+  //   show rejected items
+  document.getElementById("rejected-preview").classList.remove("hidden");
+  // hide // hide interview and all jobs
+  document.getElementById("all-job-preview").classList.add("hidden");
+  document.getElementById("interview-preview").classList.add("hidden");
 });
+

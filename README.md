@@ -1,83 +1,35 @@
-## Welcome To ( সহজ সরল সিম্পল ) Assignment - 4 
+question 1 -   What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?
+answer:
+	getElementById finds one element by its id
 
+	getElementsByClassName finds all elements with a class name and returns a live list that updates when the DOM changes
 
----
-# 📅 Deadline For 60 marks: 23th February, 2026 (11:59 pm ⏱️)
-# 📅 Deadline For 50 marks: 24th February, 2026 (11:59 pm ⏱️)
-# 📅 Deadline For 30 marks: Any time after 24th February.
+	querySelector finds the first element that matches a CSS selector
 
+	querySelectorAll finds all elements that match a CSS selector and usually returns a static list that does not auto update when the DOM changes
 
-# Main Requirements
+question 2 - How do you create and insert a new element into the DOM?
+answer:
+	Create a new element using document.createElement, set its text or attributes (like class or id), then insert it into the DOM using methods like appendChild, prepend, before, or after.
 
-## Design Part
+question 3 - What is Event Bubbling? And how does it work?
+answer:
+	Event bubbling is when an event starts on the element you clicked and then “bubbles up” to its parent, then the parent’s parent, all the way up to the document.
 
-## Dashboard
-- Website name and Create a dashboard like figma 
-- The section should be responsive for mobile devices. It is totally up to you. 
+	So if you click a button inside a card:
+	the click happens on the button first, then the card, then the container, then the body, then the document.
 
-## Available Jobs Section
-- A title on the left side, jobs count on the right side 
-- 3 different tab  below the section title 
-- Minimum 8 cards with:
-	- companyName
-	- position
-	- location
-	- type
-	- salary
-	- description
-	- 2 buttons: Interview, Rejected
-- By default all the jobs data will show on All tab, and the Interview, Rejected tab will show “No jobs Available” message with a subtitle below and an icon/image on the above
+	That’s why you can put one click listener on a parent container and still detect clicks on child elements by checking what was clicked.
 
-- The section should be responsive for mobile devices. It is totally up to you.
+question 4 - What is Event Delegation in JavaScript? Why is it useful?
+answer:
 
---- 
+	Event delegation means you add one event listener to a parent element instead of adding separate listeners to many child elements. When a child is clicked, the event bubbles up to the parent, and you check which child triggered it.
 
-## Functionalities Part
-- Clicking on Interview button on the card 
-    - will add the data on Interview tab 
-    - add the status as Interview.
-    - Will increase the the count of interview in Dashboard 
+	It’s useful because it uses fewer event listeners, works for elements added later (dynamic content), and is easier to manage than attaching listeners to every button or card.
 
-- Clicking on Rejected button on the card 
-    - will add the data on Rejected tab 
-    - add the status as Rejected.
-    - Will increase the the count of Rejected in Dashboard
+question 5  - What is the difference between preventDefault() and stopPropagation() methods?
+answer:
+	preventDefault stops the browser’s default action for an event, like stopping a form from submitting or stopping a link from opening.
 
-- Enable toggle between Interview and rejected button(you can select Rejected button after clicking on Interview, and Interview button after clicking on Rejected button). It will change the tab and dashboard count also. It will show tab wise jobs count on the right.
-
----
-
-# Challenges Requirements
-- Clicking on the delete button will remove that card from the UI, and the count will be deducted from the dashboard card and the main section.
-- No lorem ipsum text on your website. At least 8 meaningful commits in your project.  
-
-- Create a readme file and answer this question on your own. Don’t copy-paste from Google or any AI chatbot. 
-
-
-## Answers to Questions
-
-### 1. What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?
-
-### 2. How do you create and insert a new element into the DOM?
-
-### 3. What is Event Bubbling? And how does it work?
-
-### 4. What is Event Delegation in JavaScript? Why is it useful?
-
-### 5. What is the difference between preventDefault() and stopPropagation() methods?
-
----
-
-
-**Technology Stack:**
-- HTML
-- CSS (Vanilla/Tailwind/DaisyUI)
-- JavaScript (Vanilla)
-
-
---- 
-
-## What to submit: 
-
-1. GitHub Repository Link: 
-2. Live Site Link: 
+	stopPropagation stops the event from bubbling up to parent elements, so parent click handlers won’t run.

@@ -76,6 +76,7 @@ document.addEventListener("click", function (e) {
   updateJobCount();
   updateInterviewCount();
   updateRejectedCount();
+    rejectCounter()
 });
 
 // when interview and rejected button clicked
