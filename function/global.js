@@ -33,7 +33,6 @@ function updateInterviewEmptyState() {
   else emptyCard.classList.remove("hidden");
 }
 
-
 function updateRejectedEmptyState() {
   const container = document.getElementById("rejected-preview");
   const emptyCard = container.querySelector(".no-rejected");
@@ -57,14 +56,14 @@ document.addEventListener("click", function (e) {
 
   updateJobCount();
   updateInterviewEmptyState();
-  updateRejectedEmptyState()
+  updateRejectedEmptyState();
 });
 
 updateJobCount();
 updateInterviewCount();
 updateRejectedCount();
 updateInterviewEmptyState();
-updateRejectedEmptyState()
+updateRejectedEmptyState();
 
 // delete card
 document.addEventListener("click", function (e) {
@@ -90,8 +89,7 @@ document
     if (interviewBtn) {
       const card = interviewBtn.closest(".job-card");
       const statusBtn = card.querySelector(".status-button");
-  
-    
+
       statusBtn.innerText = "INTERVIEW";
       statusBtn.classList.remove("bg-primary/10");
       statusBtn.classList.add("bg-accent", "text-white");
@@ -174,3 +172,59 @@ document
       updateEmptyStates();
     }
   });
+
+document.addEventListener("click", function (e) {
+  const interviewBtn = e.target.closest(".interview-button");
+  const rejectBtn = e.target.closest(".reject-button");
+  if (!interviewBtn && !rejectBtn) return;
+
+  const card = e.target.closest(".interview-card, .rejected-card");
+  if (!card) return;
+
+  const jobTitle = card.querySelector("h5")?.innerText || "";
+  const interviewContainer = document.getElementById("interview-preview");
+  const rejectedContainer = document.getElementById("rejected-preview");
+
+  if (rejectBtn && card.classList.contains("interview-card")) {
+    rejectedContainer.querySelectorAll(".rejected-card").forEach((c) => {
+      const t = c.querySelector("h5")?.innerText || "";
+      if (t === jobTitle) c.remove();
+    });
+
+    card.classList.remove("interview-card");
+    card.classList.add("rejected-card");
+
+    const statusBtn = card.querySelector(".status-button");
+    if (statusBtn) {
+      statusBtn.innerText = "REJECTED";
+      statusBtn.classList.remove("bg-primary/10", "bg-accent");
+      statusBtn.classList.add("bg-secondary", "text-white");
+    }
+
+    rejectedContainer.appendChild(card);
+  }
+
+  if (interviewBtn && card.classList.contains("rejected-card")) {
+    interviewContainer.querySelectorAll(".interview-card").forEach((c) => {
+      const t = c.querySelector("h5")?.innerText || "";
+      if (t === jobTitle) c.remove();
+    });
+
+    card.classList.remove("rejected-card");
+    card.classList.add("interview-card");
+
+    const statusBtn = card.querySelector(".status-button");
+    if (statusBtn) {
+      statusBtn.innerText = "INTERVIEW";
+      statusBtn.classList.remove("bg-primary/10", "bg-secondary");
+      statusBtn.classList.add("bg-accent", "text-white");
+    }
+
+    interviewContainer.appendChild(card);
+  }
+
+  updateInterviewCount();
+  updateRejectedCount();
+  updateJobCount();
+  updateEmptyStates();
+});
