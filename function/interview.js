@@ -34,3 +34,29 @@ document.getElementById("interview").addEventListener("click", function () {
   document.getElementById("all-job-preview").classList.add("hidden");
   document.getElementById("rejected-preview").classList.add("hidden");
 });
+
+// when interview button clicked
+document
+  .getElementById("all-job-preview")
+  .addEventListener("click", function (e) {
+    const interViewButton = e.target.closest(".interview-button");
+    if (interViewButton) {
+      const card = interViewButton.closest(".job-card");
+      const statusBtn = card.querySelector(".status-button");
+
+      statusBtn.innerText = "INTERVIEW";
+
+      statusBtn.classList.remove("bg-primary/10");
+      statusBtn.classList.add("bg-accent", "text-white");
+    }
+
+    const rejectButton = e.target.closest(".reject-button");
+    if (rejectButton) {
+      const card = rejectButton.closest(".job-card");
+      const statusBtn = card.querySelector(".status-button");
+      statusBtn.innerText = "REJECTED";
+      statusBtn.classList.add("bg-secondary", "text-white");
+      
+      statusBtn.classList.remove("bg-accent","bg-primary/10");
+    }
+  });
